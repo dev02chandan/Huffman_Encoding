@@ -95,7 +95,7 @@ while(len(charCount)>1):                                     # While there are a
     
     else: 
         Node3.right = Node5                 # This signifies that min2 was a node and hence we add Node5 as the left of the new node
-        
+            
     charCount.append(Sum)
     char.append(Node3)
 
