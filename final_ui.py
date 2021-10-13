@@ -12,6 +12,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_MainWindow(object):
+    def button1click(self):
+        print("Chall raha hai")
+    def button2click(self):
+        print("Chall raha hai returns")
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(532, 566)
@@ -29,6 +34,7 @@ class Ui_MainWindow(object):
 "border-radius: 10px;\n"
 "box-shadow: 1px 2px 22px 0px rgb(89,87,87,0.85);")
         self.pushButton.setObjectName("pushButton")
+        self.pushButton.clicked.connect(self.button1click)
         self.enter_2 = QtWidgets.QLabel(self.centralwidget)
         self.enter_2.setGeometry(QtCore.QRect(66, 260, 251, 21))
         self.enter_2.setStyleSheet("font: 14pt \"NSimSun\";")
@@ -40,6 +46,7 @@ class Ui_MainWindow(object):
 "border-radius: 10px;\n"
 "box-shadow: 1px 2px 22px 0px rgb(89,87,87,0.85);")
         self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_2.clicked.connect(self.button2click)
         self.enter_3 = QtWidgets.QLabel(self.centralwidget)
         self.enter_3.setGeometry(QtCore.QRect(66, 320, 101, 21))
         self.enter_3.setStyleSheet("font: 14pt \"NSimSun\";")
@@ -68,8 +75,7 @@ class Ui_MainWindow(object):
         self.pushButton_2.setText(_translate("MainWindow", "Select File"))
         self.enter_3.setText(_translate("MainWindow", "Download:"))
         self.label.setText(_translate("MainWindow", "TextLabel"))
-
-
+   
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
