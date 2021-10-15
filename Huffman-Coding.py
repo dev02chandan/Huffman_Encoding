@@ -84,10 +84,7 @@ def Huffman_code_table(Node, huffman_table, val=''):
     if(Node.right):
         Huffman_code_table(Node.right, huffman_table, newVal)
 
-        # if node is edge node then
-        # display its huffman code
-
-    if(not Node.left and not Node.right):
+    if(isLeaf(Node)):
         char = Node.char
         huffman_table[char] = newVal
         # Adding values to the dict
@@ -148,13 +145,16 @@ def Huffman(text):
         Binary_Huffman_code += huffman_table.get(i)
     # Adding binary code for every character in the given text
 
+    Compression_ratio = (len(text)*8)/len(Binary_Huffman_code)
+
+    Binary_Huffman_code = int(Binary_Huffman_code, base=2)
+
     print("Huffman Table : ")
     print(huffman_table)
 
     print("Binary Huffman Code: ")
     print(Binary_Huffman_code)
 
-    Compression_ratio = (len(text)*8)/len(Binary_Huffman_code)
     print("Compression Ratio = ", Compression_ratio)
 
     return Binary_Huffman_code, huffman_table, root
@@ -215,7 +215,7 @@ def Decoding(Binary_Huffman_code, root):
 
 
 if __name__ == "__main__":
-    # myInput = input("Enter text: ")
-    myInput = "AB CDBCD ABBAB E"
+    myInput = input("Enter text: ")
+    # myInput = "AB CDBCD ABBAB E"
     Binary, Table, root = Huffman(myInput)
-    print("Decoded String is: ", Decoding(Binary, root))
+    # print("Decoded String is: ", Decoding(Binary, root))
