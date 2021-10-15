@@ -1,4 +1,5 @@
 import copy
+import sys
 
 
 def isLeaf(root):
@@ -147,15 +148,18 @@ def Huffman(text):
 
     Compression_ratio = (len(text)*8)/len(Binary_Huffman_code)
 
-    Binary_Huffman_code = int(Binary_Huffman_code, base=2)
+    Binary_Huffman_code = int(Binary_Huffman_code, 16)
+
+    # Binary_Huffman_code = bin(Binary_Huffman_code)
+
+    print(sys.getsizeof(Binary_Huffman_code))
+    print("Compression Ratio = ", Compression_ratio)
 
     print("Huffman Table : ")
     print(huffman_table)
 
     print("Binary Huffman Code: ")
     print(Binary_Huffman_code)
-
-    print("Compression Ratio = ", Compression_ratio)
 
     return Binary_Huffman_code, huffman_table, root
 
@@ -215,7 +219,21 @@ def Decoding(Binary_Huffman_code, root):
 
 
 if __name__ == "__main__":
-    myInput = input("Enter text: ")
+    file_name = input("ENTRER FILE LOCATION")
+    file = open(file_name)
+    text = file.read().replace("\n", " ")
+
+    Binary, Table, root = Huffman(text)
+
+    file = open("out.txt", "w")
+    file.write(Binary)
+    file.close()
+
+    # file = open("sample.bin", "r")
+    # Binary = file.read()
+
+    # print(Decoding(Binary, root))
+
+    # myInput = input("Enter text: ")
     # myInput = "AB CDBCD ABBAB E"
-    Binary, Table, root = Huffman(myInput)
     # print("Decoded String is: ", Decoding(Binary, root))
