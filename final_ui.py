@@ -2,7 +2,7 @@ from pathlib import Path
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
-from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
+from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, messagebox
 from tkinter import filedialog as fd
 
 OUTPUT_PATH = Path(__file__).parent
@@ -54,9 +54,10 @@ def open_text_file():
         ('text files', '*.txt'),
         ('All files', '*.*')
     )
-    f = fd.askopenfile(filetypes=filetypes)
-def onclick():
-    open_text_file()
+    file_path_txt = fd.askopenfilename(filetypes=filetypes)
+    print(file_path_txt)
+
+
     
 button_image_1 = PhotoImage(
     file=relative_to_assets("button_1.png"))
@@ -65,7 +66,7 @@ button_1 = Button(
     image=button_image_1,
     borderwidth=0,
     highlightthickness=0,
-    command=onclick(),
+    command=open_text_file,
     relief="flat"
 )
 button_1.place(
@@ -81,7 +82,7 @@ button_2 = Button(
     image=button_image_2,
     borderwidth=0,
     highlightthickness=0,
-    command=open_text_file(),
+    command=open_text_file,
     relief="flat"
 )
 button_2.place(
