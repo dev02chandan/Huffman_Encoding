@@ -1,6 +1,5 @@
 import pandas as pd
 import copy
-import sys
 
 
 def isLeaf(root):
@@ -149,7 +148,7 @@ def Huffman(text):
 
     Compression_ratio = (len(text)*8)/len(Binary_Huffman_code)
 
-    print(sys.getsizeof(Binary_Huffman_code))
+    # print(sys.getsizeof(Binary_Huffman_code))
     print("Compression Ratio = ", Compression_ratio)
 
     print("Huffman Table : ")
@@ -215,6 +214,45 @@ def Decoding(Binary_Huffman_code, root):
     return Decoded
 
 
+def Decoding_withTable(Binary_Huffman_Code, Table):
+    # Binary Huffman Code is the Binary string
+    # Table is a dictionary
+
+    Decoded = ""
+
+    Binary_Huffman_Code_Copy = copy.copy(Binary_Huffman_Code)
+
+    Keys = Table.keys()
+    Keys = list(Keys)
+    Values = Table.values()
+    Values = list(Values)
+    print(Values, Keys)
+
+    char = ""
+
+    while(len(Binary_Huffman_Code_Copy) != 0):
+
+        if(char in Values):
+            index = Values.index(char)
+            Decoded += Keys[index]
+            char = ""
+            # If char is present in values - we get the index of char and check its key
+            # That key is the char decoded
+            # char is set back to 1
+
+        else:
+            char += Binary_Huffman_Code_Copy[0]
+            Binary_Huffman_Code_Copy = Binary_Huffman_Code_Copy[1:]
+            # char holds the binary code to compare in the values list
+            # Binary Huffman Code copy gets first character sliced every time
+
+    index = Values.index(char)
+    Decoded += Keys[index]
+    # Last character gets added to decoded
+
+    return Decoded
+
+
 if __name__ == "__main__":
     file_name = input("ENTRER FILE LOCATION")
     file = open(file_name)
@@ -231,27 +269,22 @@ if __name__ == "__main__":
 
         output.write(bytes(b))
 
+    print(Decoding_withTable(Binary, Table))
+
     # print("For Decoding: ")
     # file_name = input("ENTRER FILE LOCATION OF BINARY CODE(.bin) :  ")
     # Table = input("ENTER FILE LOCATION OF TABLE: ")
-
 
     # with open("atb.bin", "rb") as file:
     #     data = file.read(8)
     #     datastring = str(data)
 
-    df = pd.DataFrame(data=Table, index=[0])
+    # df = pd.DataFrame(data=Table, index=[0])
 
-    df = (df.T)
+    # df = (df.T)
 
-    # print (df)
+    # # # print (df)
 
-    df.to_excel('huffman_table.xlsx')
+    # df.to_excel('huffman_table.xlsx')
     # file = open("sample.bin", "r")
     # Binary = file.read()
-
-    # print(Decoding(Binary, root))
-
-    # myInput = input("Enter text: ")
-    # myInput = "AB CDBCD ABBAB E"
-    # print("Decoded String is: ", Decoding(Binary, root))
