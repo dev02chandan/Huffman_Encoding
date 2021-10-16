@@ -1,9 +1,7 @@
 from pathlib import Path
-
-# from tkinter import *
-# Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, messagebox
 from tkinter import filedialog as fd
+
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
@@ -17,6 +15,15 @@ window = Tk()
 
 window.geometry("648x394")
 window.configure(bg = "#F0F0F0")
+
+def open_text_file():
+    # file type
+    filetypes = (
+        ('text files', '*.txt'),
+        ('All files', '*.*')
+    )
+    file_path_txt = fd.askopenfilename(filetypes=filetypes)
+    print(file_path_txt)
 
 
 canvas = Canvas(
@@ -48,25 +55,13 @@ canvas.create_text(
     font=("Roboto", 17 * -1)
 )
 
-def open_text_file():
-    # file type
-    filetypes = (
-        ('text files', '*.txt'),
-        ('All files', '*.*')
-    )
-    file_path_txt = fd.askopenfilename(filetypes=filetypes)
-    print(file_path_txt)
-
-
-    
 button_image_1 = PhotoImage(
     file=relative_to_assets("button_1.png"))
 button_1 = Button(
-    window,
     image=button_image_1,
     borderwidth=0,
     highlightthickness=0,
-    command=open_text_file,
+    command=lambda: print("button_1 clicked"),
     relief="flat"
 )
 button_1.place(
@@ -82,7 +77,7 @@ button_2 = Button(
     image=button_image_2,
     borderwidth=0,
     highlightthickness=0,
-    command=open_text_file,
+    command=lambda: print("button_2 clicked"),
     relief="flat"
 )
 button_2.place(
@@ -91,6 +86,5 @@ button_2.place(
     width=164.0,
     height=44.0
 )
-
 window.resizable(False, False)
 window.mainloop()
