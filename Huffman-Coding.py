@@ -148,10 +148,6 @@ def Huffman(text):
 
     Compression_ratio = (len(text)*8)/len(Binary_Huffman_code)
 
-    Binary_Huffman_code = int(Binary_Huffman_code, 16)
-
-    # Binary_Huffman_code = bin(Binary_Huffman_code)
-
     print(sys.getsizeof(Binary_Huffman_code))
     print("Compression Ratio = ", Compression_ratio)
 
@@ -225,9 +221,14 @@ if __name__ == "__main__":
 
     Binary, Table, root = Huffman(text)
 
-    file = open("out.txt", "w")
-    file.write(Binary)
-    file.close()
+    output_path: str = file_name + ".bin"
+    with open(output_path, 'wb') as output:
+        b = bytearray()
+        for i in range(0, len(Binary), 8):
+            byte = Binary[i:i + 8]
+            b.append(int(byte, 2))
+
+        output.write(bytes(b))
 
     # file = open("sample.bin", "r")
     # Binary = file.read()
