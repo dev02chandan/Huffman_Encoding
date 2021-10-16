@@ -21,12 +21,12 @@ def relative_to_assets(path: str) -> Path:
 window = Tk()
 
 window.geometry("648x394")
-window.configure(bg = "#FFFFFF")
+window.configure(bg = "#F0F0F0")
 
 
 canvas = Canvas(
     window,
-    bg = "#FFFFFF",
+    bg = "#F0F0F0",
     height = 394,
     width = 648,
     bd = 0,
