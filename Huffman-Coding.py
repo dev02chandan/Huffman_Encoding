@@ -230,13 +230,23 @@ if __name__ == "__main__":
             b.append(int(byte, 2))
 
         output.write(bytes(b))
-    # df = pd.DataFrame(data=Table, index=[0])
 
-    # df = (df.T)
+    # print("For Decoding: ")
+    # file_name = input("ENTRER FILE LOCATION OF BINARY CODE(.bin) :  ")
+    # Table = input("ENTER FILE LOCATION OF TABLE: ")
+
+
+    # with open("atb.bin", "rb") as file:
+    #     data = file.read(8)
+    #     datastring = str(data)
+
+    df = pd.DataFrame(data=Table, index=[0])
+
+    df = (df.T)
 
     # print (df)
 
-    # df.to_excel('huffman_table.xlsx')
+    df.to_excel('huffman_table.xlsx')
     # file = open("sample.bin", "r")
     # Binary = file.read()
 
