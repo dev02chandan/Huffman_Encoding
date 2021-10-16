@@ -1,3 +1,4 @@
+import pandas as pd
 import copy
 import sys
 
@@ -229,7 +230,13 @@ if __name__ == "__main__":
             b.append(int(byte, 2))
 
         output.write(bytes(b))
+    # df = pd.DataFrame(data=Table, index=[0])
 
+    # df = (df.T)
+
+    # print (df)
+
+    # df.to_excel('huffman_table.xlsx')
     # file = open("sample.bin", "r")
     # Binary = file.read()
 
