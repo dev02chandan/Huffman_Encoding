@@ -18,7 +18,7 @@
     ·
     <a href="https://github.com/github_username/repo_name/issues">Shounak Deshmukh I013</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Raghav Jeendgar I021</a>
+    <a href="https://github.com/raghavjeendgar">Raghav Jeendgar I021</a>
   </p>
 </div>
 <br>
