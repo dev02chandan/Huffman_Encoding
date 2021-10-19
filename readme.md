@@ -50,7 +50,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
 Huffman coding is an algorithm for lossless data compression. The idea is to assign codes of different lengths to the input characters, the length of the allocated codes depends on the corresponding character frequencies. The most common character gets the smallest code and vice versa.
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -96,7 +96,7 @@ This is an example of how to list things you need to use the software and how to
 
 ## Usage
 
-TODO: ADD GIF OF USAGE
+TODO: ADD GIF OF USAGE 
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
