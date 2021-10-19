@@ -1,4 +1,4 @@
-import copy,pickle,os,json
+import copy,pickle,os
 # import pandas as pd
 
 class node:
@@ -253,47 +253,85 @@ class huff:
         # Last character gets added to decoded
 
         return Decoded
+    def read_file(file_path):
+        file = open(file_path)
+        file_text = file.read().replace("\n", " ")
+        return file_text
+    
+    def make_output(filename,bin_data,huff_table):
+        if not os.path.exists('output'):
+            os.makedirs('output')
+    
+    
+        output_path: str ='output/'+ filename + ".bin"
+    
+    
+        with open(output_path, 'wb') as output:
+            b = bytearray()
+            for i in range(0, len(bin_data), 8):
+                byte = bin_data[i:i + 8]
+                b.append(int(byte, 2))
+
+            output.write(bytes(b))
+        print('Binary output created')
+
+    # Storing dict as pkl file (best choice)
+        with open('output'+"/"+ filename +"_"+"Decomp_key.pkl", 'wb') as f:
+            pickle.dump(huff_table, f, pickle.HIGHEST_PROTOCOL)
+            
+        print("decomp key done")
 
 
-if __name__ == "__main__":
-    file_name = input("ENTER FILE LOCATION \n")
-    file = open(file_name)
-    text = file.read().replace("\n", " ")
 
-    Binary, Table, root = huff.Huffman(text)
-    
-    
-    if not os.path.exists('output'):
-        os.makedirs('output')
-    
-    
-    output_path: str ='output/'+file_name + ".bin"
-    
-    
-    with open(output_path, 'wb') as output:
-        b = bytearray()
-        for i in range(0, len(Binary), 8):
-            byte = Binary[i:i + 8]
-            b.append(int(byte, 2))
-
-        output.write(bytes(b))
-    print('Binary output created')
-
-# Storing dict as pkl file (best choice)
-    with open('output'+"/"+"Decomp_key.pkl", 'wb') as f:
-        pickle.dump(Table, f, pickle.HIGHEST_PROTOCOL)
+    def decomp(bin_path,pkl_path):
+        with open(pkl_path, 'rb') as f:
+            decomp_table=pickle.load(f)
+        with open(bin_path, 'rb') as f:
+            binary = f.read()
+        return huff.Decoding_withTable(binary,decomp_table)
         
-    print("decomp key done")
-# TODO:Make file path user selctable
+
+
+
+# if __name__ == "__main__":
+#     # file_name = input("ENTER FILE LOCATION \n")
+#     # file = open(file_name)
+#     # text = file.read().replace("\n", " ")
+
+#     # Binary, Table, root = huff.Huffman(text)
+    
+    
+# #     if not os.path.exists('output'):
+# #         os.makedirs('output')
+    
+    
+# #     output_path: str ='output/'+file_name + ".bin"
+    
+    
+# #     with open(output_path, 'wb') as output:
+# #         b = bytearray()
+# #         for i in range(0, len(Binary), 8):
+# #             byte = Binary[i:i + 8]
+# #             b.append(int(byte, 2))
+
+# #         output.write(bytes(b))
+# #     print('Binary output created')
+
+# # # Storing dict as pkl file (best choice)
+# #     with open('output'+"/"+"Decomp_key.pkl", 'wb') as f:
+# #         pickle.dump(Table, f, pickle.HIGHEST_PROTOCOL)
+        
+# #     print("decomp key done")
+# # # TODO:Make file path user selctable
    
-# Generating dict form pkl file
-    with open('output'+"/"+"Decomp_key.pkl", 'rb') as f:
-        decomp_table=pickle.load(f)
-# TODO:Make file path user selctable
+# # # Generating dict form pkl file
+# #     with open('output'+"/"+"Decomp_key.pkl", 'rb') as f:
+# #         decomp_table=pickle.load(f)
+# # # TODO:Make file path user selctable
     
 
 
 
-    # print(huff.Decoding_withTable(Binary, decomp_table))
+#     # print(huff.Decoding_withTable(Binary, decomp_table))
 
     
