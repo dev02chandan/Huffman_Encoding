@@ -45,10 +45,9 @@ Huffman coding is an algorithm for lossless data compression. The idea is to ass
 
 
 
-## Getting Started
 
 
-### Installation
+## Installation
 
 1. Clone the repo
    ```sh
