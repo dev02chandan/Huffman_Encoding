@@ -12,11 +12,11 @@
   <p align="center">
 <strong>Team Members</strong>
     <br />
-    <a href="https://github.com/github_username/repo_name">Dev Chandan I009</a>
+    <a href="https://github.com/dev02chandan">Dev Chandan I009</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Krisha Chemburkar I012</a>
+    <a href="https://github.com/krishachemburkar">Krisha Chemburkar I012</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Shounak Deshmukh I013</a>
+    <a href="https://github.com/ShounakDeshmukh">Shounak Deshmukh I013</a>
     ·
     <a href="https://github.com/raghavjeendgar">Raghav Jeendgar I021</a>
   </p>
@@ -25,28 +25,6 @@
 
  ![GitHub contributors](https://img.shields.io/github/contributors/dev02chandan/DSA-Project?style=for-the-badge)
  
-
-
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    
-  </ol>
-</details>
-
-<br>
 
 
 ## About The Project
@@ -58,10 +36,10 @@ Huffman coding is an algorithm for lossless data compression. The idea is to ass
 ### Built With
 
 * [Python](https://www.python.org)
-* [os](https://pandas.pydata.org)
-* [tkinter](https://docs.python.org/3/library/tkinter.html#module-tkinter)
-* [copy]()
-* [pickle]()
+* [os](https://docs.python.org/3/library/os.html)
+* [tkinter](https://docs.python.org/3/library/tkinter.html)
+* [copy](https://docs.python.org/3/library/copy.html)
+* [pickle](https://docs.python.org/3/library/pickle.html#:~:text=“Pickling”%20is%20the%20process%20whereby,back%20into%20an%20object%20hierarchy.)
 
 
 
