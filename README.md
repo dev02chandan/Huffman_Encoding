@@ -23,6 +23,8 @@
 </div>
 <br>
 
+ ![GitHub contributors](https://img.shields.io/github/contributors/dev02chandan/DSA-Project?style=for-the-badge)
+ 
 
 
 <details>
@@ -37,7 +39,6 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
@@ -50,9 +51,7 @@
 
 ## About The Project
 
-<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com -->
 Huffman coding is an algorithm for lossless data compression. The idea is to assign codes of different lengths to the input characters, the length of the allocated codes depends on the corresponding character frequencies. The most common character gets the smallest code and vice versa.
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
@@ -64,19 +63,11 @@ Huffman coding is an algorithm for lossless data compression. The idea is to ass
 * [copy]()
 * [pickle]()
 
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 
 ## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
 
 
 ### Installation
@@ -85,24 +76,10 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    git clone https://github.com/dev02chandan/DSA-Project.git
    ```
-2. Install pip packages
+2. Execute main.py
    ```sh
-   TODO:make requirement.txt
+   python3 ../src/main.py
    ```
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-## Usage
-
-TODO: ADD GIF OF USAGE
-
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 
