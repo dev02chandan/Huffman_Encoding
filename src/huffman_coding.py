@@ -140,13 +140,12 @@ class huff:
         # Adding binary code for every character in the given text
 
         Compression_ratio = (len(text)*8)/len(Binary_Huffman_code)
-        # print(sys.getsizeof(Binary_Huffman_code))
         print("Compression Ratio = ", Compression_ratio)
 
         print("Huffman Table : ")
         print(huffman_table)
 
-        return Binary_Huffman_code, huffman_table, root
+        return Binary_Huffman_code, huffman_table
 
     def Decoding_withTable(Binary_Huffman_Code, Table):
         # Binary Huffman Code is the Binary string
@@ -160,7 +159,6 @@ class huff:
         Keys = list(Keys)
         Values = Table.values()
         Values = list(Values)
-        # print(Values, Keys) TODO:uncomment
 
         char = ""
 
@@ -207,7 +205,7 @@ class huff:
         print('Binary output created')
 
         # Storing dict as pkl file (best choice)
-        with open('output'+"/" + filename + "_"+"Decomp_key.pkl", 'wb') as f:
+        with open('output'+"/" + filename + "_"+"Decompress_key.pkl", 'wb') as f:
             pickle.dump(huff_table, f, pickle.HIGHEST_PROTOCOL)
 
         print("decomp key done")
@@ -224,5 +222,4 @@ class huff:
                 bit_string += bits
                 byte = file.read(1)
 
-            # print(bit_string)
         return huff.Decoding_withTable(bit_string, decomp_table)

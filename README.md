@@ -59,8 +59,10 @@ Huffman coding is an algorithm for lossless data compression. The idea is to ass
 ### Built With
 
 * [Python](https://www.python.org)
-* [pandas](https://pandas.pydata.org)
+* [os](https://pandas.pydata.org)
 * [tkinter](https://docs.python.org/3/library/tkinter.html#module-tkinter)
+* [copy]()
+* [pickle]()
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
