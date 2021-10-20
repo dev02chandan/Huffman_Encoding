@@ -30,8 +30,10 @@ def compress():
 def decompress():
     file_path_bin = fd.askopenfilename(filetypes= [('bin files', '*.bin')])
     file_path_pkl = fd.askopenfilename(filetypes= [('Pickle files', '*.pkl*')])
-    decoded_text = huffman.decomp(file_path_bin,file_path_pkl)
-    print(decoded_text)
+    decoded_text = huffman.decompress(file_path_bin,file_path_pkl)
+    with open('output'+"/"+"_"+"decoded.txt", 'w') as output:
+            output.write(decoded_text)
+    print("decoded_text generated")
 canvas = Canvas(
     window,
     bg = "#F0F0F0",
