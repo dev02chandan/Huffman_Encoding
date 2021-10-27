@@ -1,4 +1,7 @@
-import copy,pickle,os
+import copy
+import pickle
+import os
+
 
 class node:
     def __init__(self, freq, char, left=None, right=None):
@@ -57,6 +60,7 @@ class huff:
 
         if i == 0:
             return
+
         parent = (i-1)//2
         if(A[parent].freq > A[i].freq):
             huff.swap(A, i, parent)
