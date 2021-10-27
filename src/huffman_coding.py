@@ -54,6 +54,9 @@ class huff:
         return min
 
     def HeapifyUp(A, i):
+
+        if i == 0:
+            return
         parent = (i-1)//2
         if(A[parent].freq > A[i].freq):
             huff.swap(A, i, parent)
