@@ -185,9 +185,6 @@ class huff:
                 # char holds the binary code to compare in the values list
                 # Binary Huffman Code copy gets first character sliced every time
 
-        index = Values.index(char)
-        Decoded += Keys[index]
-        # Last character gets added to decoded
 
         return Decoded
 
@@ -209,13 +206,13 @@ class huff:
                 b.append(int(byte, 2))
 
             output.write(bytes(b))
-        print('Binary output created')
+        print('Binary output created, Compression complete')
 
         # Storing dict as pkl file (best choice)
         with open('output'+"/" + filename + "_"+"Decompress_key.pkl", 'wb') as f:
             pickle.dump(huff_table, f, pickle.HIGHEST_PROTOCOL)
 
-        print("decomp key done")
+        print("Decompression Key Created")
 
     def decompress(bin_path, pkl_path):
         with open(pkl_path, 'rb') as f:

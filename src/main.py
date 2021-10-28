@@ -24,7 +24,6 @@ def compress():
     file_path_txt = fd.askopenfilename(filetypes= [('text files', '*.txt')])
     file_name=os.path.basename(file_path_txt)
     text=huffman.read_file(file_path_txt)
-    # print(text)
     Binary, Table = huffman.Huffman(text)
     huffman.make_output(file_name,Binary,Table)
 def decompress():
